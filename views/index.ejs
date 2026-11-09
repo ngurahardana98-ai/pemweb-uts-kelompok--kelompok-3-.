@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Sistem Informasi Klinik</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f7f6;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .hero-section {
+            background: linear-gradient(135deg, #0d6efd, #0dcaf0);
+            color: white;
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 35px;
+            box-shadow: 0 6px 20px rgba(13, 110, 253, 0.2);
+        }
+        .card-menu {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            border-radius: 12px;
+        }
+        .card-menu:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+        }
+        .icon-box {
+            font-size: 2.5rem;
+            margin-bottom: 12px;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <div class="container py-5">
+        
+        <!-- Hero Banner / Sambutan -->
+        <div class="hero-section text-center text-md-start d-md-flex align-items-center justify-content-between">
+            <div>
+                <h1 class="fw-bold mb-2"><i class="bi bi-hospital me-2"></i>Sistem Informasi Klinik</h1>
+                <p class="lead mb-0 opacity-90">Selamat datang di aplikasi manajemen klinik kelompok Anda.</p>
+            </div>
+            <div class="mt-4 mt-md-0">
+                <a href="/pendaftaran/create" class="btn btn-light btn-lg fw-semibold text-primary shadow-sm">
+                    <i class="bi bi-plus-circle me-1"></i> Pendaftaran Baru
+                </a>
+            </div>
+        </div>
+
+        <!-- Section Grid Modul -->
+        <h4 class="mb-3 fw-bold text-secondary"><i class="bi bi-grid-fill me-2"></i>Kelola Data & Layanan</h4>
+        
+        <!-- GRID KELIMA MODUL -->
+        <div class="row g-4 justify-content-center">
+            
+            <!-- 1. Pasien -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card card-menu shadow-sm h-100 p-3">
+                    <div class="card-body text-center d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="icon-box text-primary">
+                                <i class="bi bi-people-fill"></i>
+                            </div>
+                            <h5 class="card-title fw-bold">Data Pasien</h5>
+                            <p class="card-text text-muted small">Kelola informasi data diri, NIK, dan riwayat identitas seluruh pasien klinik.</p>
+                        </div>
+                        <a href="/pasien" class="btn btn-outline-primary w-100 mt-3 fw-semibold">Kelola Data Pasien</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Dokter -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card card-menu shadow-sm h-100 p-3">
+                    <div class="card-body text-center d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="icon-box text-success">
+                                <i class="bi bi-person-badge-fill"></i>
+                            </div>
+                            <h5 class="card-title fw-bold">Data Dokter</h5>
+                            <p class="card-text text-muted small">Atur jadwal praktik, spesialisasi, dan data tenaga medis yang bertugas.</p>
+                        </div>
+                        <a href="/dokter" class="btn btn-outline-success w-100 mt-3 fw-semibold">Kelola Data Dokter</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Obat -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card card-menu shadow-sm h-100 p-3">
+                    <div class="card-body text-center d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="icon-box text-warning">
+                                <i class="bi bi-capsule"></i>
+                            </div>
+                            <h5 class="card-title fw-bold">Inventaris Obat</h5>
+                            <p class="card-text text-muted small">Pantau stok obat, kategori, harga satuan, dan tanggal kedaluwarsa.</p>
+                        </div>
+                        <a href="/obat" class="btn btn-outline-warning w-100 mt-3 text-dark fw-semibold">Kelola Data Obat</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Pendaftaran -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card card-menu shadow-sm h-100 p-3">
+                    <div class="card-body text-center d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="icon-box text-info">
+                                <i class="bi bi-clipboard2-pulse-fill"></i>
+                            </div>
+                            <h5 class="card-title fw-bold">Pendaftaran Pasien</h5>
+                            <p class="card-text text-muted small">Catat antrean pendaftaran harian pasien ke dokter tujuan secara real-time.</p>
+                        </div>
+                        <a href="/pendaftaran" class="btn btn-outline-info w-100 mt-3 text-dark fw-semibold">Kelola Data Pendaftaran</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Rekam Medis -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card card-menu shadow-sm h-100 p-3">
+                    <div class="card-body text-center d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="icon-box text-danger">
+                                <i class="bi bi-journal-medical"></i>
+                            </div>
+                            <h5 class="card-title fw-bold">Rekam Medis</h5>
+                            <p class="card-text text-muted small">Catat diagnosa dokter, tindakan medis, resep obat, dan riwayat pemeriksaan terintegrasi.</p>
+                        </div>
+                        <a href="/rekam-medis" class="btn btn-outline-danger w-100 mt-3 fw-semibold">Kelola Data Rekam Medis</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <footer class="text-center mt-5 text-muted small">
+            <p>&copy; 2026 Sistem Informasi Klinik & Rekam Medis • Tugas Kelompok Pemrograman Web</p>
+        </footer>
+    </div>
+</body>
+</html>

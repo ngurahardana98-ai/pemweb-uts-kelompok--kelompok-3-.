@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Tambah Pendaftaran - Sistem Klinik</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container mt-5" style="max-width: 600px;">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h3 class="mb-4">Form Pendaftaran Pasien</h3>
+                <form action="/pendaftaran" method="POST">
+                    <div class="mb-3">
+                        <label class="form-label">Pilih Pasien</label>
+                        <select name="pasien_id" class="form-select" required>
+                            <option value="">-- Pilih Pasien --</option>
+                            <% pasien.forEach(p => { %>
+                                <option value="<%= p.id %>"><%= p.nama %> (NIK: <%= p.nik %>)</option>
+                            <% }) %>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Pilih Dokter</label>
+                        <select name="dokter_id" class="form-select" required>
+                            <option value="">-- Pilih Dokter --</option>
+                            <% dokter.forEach(d => { %>
+                                <option value="<%= d.id %>"><%= d.nama_dokter %> - <%= d.spesialisasi %></option>
+                            <% }) %>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Tanggal Daftar</label>
+                        <input type="date" name="tanggal_daftar" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Keluhan Utama</label>
+                        <textarea name="keluhan" class="form-control" rows="3" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Status</label>
+                        <select name="status" class="form-select">
+                            <option value="Menunggu">Menunggu</option>
+                            <option value="Diperiksa">Diperiksa</option>
+                            <option value="Selesai">Selesai</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-success">Simpan Pendaftaran</button>
+                    <a href="/pendaftaran" class="btn btn-secondary">Batal</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
